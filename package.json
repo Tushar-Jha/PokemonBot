@@ -1,13 +1,25 @@
 {
-	"name": "my-bot",
-	"version": "1.0.0",
-	"lockfileVersion": 2,
-	"requires": true,
-	"packages": {
-		"": {
-			"name": "my-bot",
-			"version": "1.0.0",
-			"license": "ISC"
-		}
-	}
+  "name": "pokemonbot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "pokebot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tushar-Jha/PokemonBot.git"
+  },
+  "author": "Tushar Jha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tushar-Jha/PokemonBot/issues"
+  },
+  "homepage": "https://github.com/Tushar-Jha/PokemonBot#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "discord.js": "^12.5.3",
+    "pokemon.js": "^1.1.8",
+    "underscore": "^1.13.1"
+  }
 }
