@@ -58,10 +58,10 @@ client.on('message', async msg => {
 
 
           embed.setThumbnail(`${sprites.front_default}`);
-          stats.forEach(stat=>{embed.addField(stat.stat.name,stat.base_stat,true);})
-          embed.addField('Weight',`${Number(weight)/10} kg`,true);
-          embed.addField('Height',`${Number(height)/10} m`,true);
-          embed.addField('Base Experience',base_experience,true);
+          stats.forEach(stat=>{embed.addField(stat.stat.name,state.base_stat?stat.base_stat:"Unavailable",true);})
+          embed.addField('Weight',weight?`${Number(weight)/10} kg`:"Unavailable",true);
+          embed.addField('Height',height?`${Number(height)/10} m`:"Unavailable",true);
+          embed.addField('Base Experience',base_experience?base_experience:"Unavailable",true);
 
           
           //--STRENGTHS--
