@@ -74,7 +74,7 @@ client.on('message', async msg => {
           var unionStrength=_.union(strengthArray[0],strengthArray[1]);
           var Strengths=" ";
           for(let i=0;i<unionStrength.length;i++){
-            Strengths+=unionStrength[i]+Array(3).fill('\xa0').join(''); 
+            Strengths+=unionStrength[i]+Array(6).fill('\xa0').join(''); 
           }
           embed.addField('Strong Against',Strengths,false);
 
