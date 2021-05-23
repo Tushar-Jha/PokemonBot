@@ -34,8 +34,8 @@ client.on('message', async msg => {
    
           const {stats,base_experience}=pokeData;
           const {sprites,height,id,name,weight,types}=pokeData1;
-          const pokeDescription=await getPokemon2(id);
-  
+          const pokeData2=await getPokemon2(id);
+          const {description,family}=pokeData2;
           //--Embed data--
           const embed=new MessageEmbed();
           if(types[0].name in Data){
@@ -43,8 +43,11 @@ client.on('message', async msg => {
           }
           embed.setColor(Color);
           embed.setTitle(`#${id} ${name} `);
-          embed.setDescription(pokeDescription);
-
+          embed.setDescription(description);
+          const EvolutionLine="Evolution Line: ";
+          family.evolutionLine.map(pok=>{
+              EvolutionLine+=pok+Array(6).fill('\xa0').join('');
+          })
 
           //--TYPES--
           var Types=" ";
@@ -91,7 +94,7 @@ client.on('message', async msg => {
             weaknesses+=unionWeakness[i]+Array(6).fill('\xa0').join(''); 
           }
           embed.addField('Weak Against',weaknesses,false);
-
+          embed.setFooter(EvolutionLine);
   
   
           msg.channel.send(embed);
